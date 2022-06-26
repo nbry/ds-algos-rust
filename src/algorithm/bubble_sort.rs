@@ -1,13 +1,13 @@
-/// # Bubble Sort
-///
-/// Worst case complexity
-/// Time: O(n^2)
-/// Space: O(n)
-///
-/// ## Additional Learning Topics
-///
-/// * The Ord Trait - Trait for types that form a total order
-///     i.e. allows for comparisons like "greater than", "equal to" etc.
+// # Bubble Sort
+//
+// Worst case complexity
+// Time: O(n^2)
+// Space: O(n)
+//
+// ## Additional Learning Topics
+//
+// * The Ord Trait - Trait for types that form a total order
+//     i.e. allows for comparisons like "greater than", "equal to" etc.
 
 pub fn bubble_sort<T: Ord>(arr: &mut [T], ascending: bool) {
     for i in 0..arr.len() {
