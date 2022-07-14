@@ -14,18 +14,18 @@ use crate::utils::loop_guard::LoopGuard;
 pub fn binary_search<T: Ord>(sorted_list: &[T], target: T) -> bool {
     let mut guard = LoopGuard::new(sorted_list.len() as i32);
 
-    let mut left_idx: usize = 0;
-    let mut right_idx: usize = sorted_list.len() - 1;
+    let mut l: usize = 0;
+    let mut r: usize = sorted_list.len() - 1;
 
-    while left_idx <= right_idx {
+    while l <= r {
         guard.check();
 
-        let middle_idx = left_idx + right_idx / 2; // Conveniently, this will be floored
+        let m = (l + r) / 2; // Conveniently, this will be floored
 
-        if target < sorted_list[left_idx] {
-            right_idx = middle_idx - 1;
-        } else if target > sorted_list[right_idx] {
-            left_idx = middle_idx - 1
+        if target < sorted_list[m] {
+            r = m - 1;
+        } else if target > sorted_list[m] {
+            l = m + 1
         } else {
             return true;
         }
@@ -45,6 +45,32 @@ fn target_is_in_array() {
 
     // Assert
     assert_eq!(result, true);
+}
+
+#[test]
+fn target_is_in_array_with_one_item() {
+    // Arrange
+    let target = 22;
+    let sorted_list = [22];
+
+    // Act
+    let result = binary_search(&sorted_list, target);
+
+    // Assert
+    assert_eq!(result, true);
+}
+
+#[test]
+fn target_isnt_in_array_with_one_item() {
+    // Arrange
+    let target = 99;
+    let sorted_list = [22];
+
+    // Act
+    let result = binary_search(&sorted_list, target);
+
+    // Assert
+    assert_eq!(result, false);
 }
 
 #[test]
