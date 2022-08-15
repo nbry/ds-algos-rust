@@ -1,4 +1,5 @@
-// Leetcode #1
+// Leetcode #1 - Two Sum
+// https://leetcode.com/problems/two-sum/
 //
 // Given an array of integers nums and an integer target,
 // return indices of the two numbers such that they add up to target.
@@ -29,34 +30,28 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 }
 
 #[test]
-fn test_two_sum() {
-    struct TestCase {
-        nums: Vec<i32>,
-        target: i32,
-        expecting: Vec<i32>,
-    }
+fn leetcode_testcase_1() {
+    let mut result = two_sum(vec![2, 7, 11, 15], 9);
+    result.sort(); // You can return the answer in any order
+    let expected = vec![0, 1];
 
-    vec![
-        TestCase {
-            nums: vec![2, 7, 11, 15],
-            target: 9,
-            expecting: vec![0, 1],
-        },
-        TestCase {
-            nums: vec![3, 2, 4],
-            target: 6,
-            expecting: vec![1, 2],
-        },
-        TestCase {
-            nums: vec![3, 3],
-            target: 6,
-            expecting: vec![0, 1],
-        },
-    ]
-    .iter()
-    .for_each(|testcase| {
-        let mut result = two_sum(testcase.nums.to_owned(), testcase.target);
-        result.sort();
-        assert_eq!(result, testcase.expecting)
-    });
+    assert_eq!(result, expected);
+}
+
+#[test]
+fn leetcode_testcase_2() {
+    let mut result = two_sum(vec![3, 2, 4], 6);
+    result.sort(); // You can return the answer in any order
+    let expected = vec![1, 2];
+
+    assert_eq!(result, expected);
+}
+
+#[test]
+fn leetcode_testcase_3() {
+    let mut result = two_sum(vec![3, 3], 6);
+    result.sort(); // You can return the answer in any order
+    let expected = vec![0, 1];
+
+    assert_eq!(result, expected);
 }

@@ -1,3 +1,19 @@
+// Leetcode #171 - Excel Sheet Column Number
+// https://leetcode.com/problems/excel-sheet-column-number/
+//
+// Given a string columnTitle that represents the column title as appears in an
+// Excel sheet, return its corresponding column number.
+//
+// For Example:
+//
+// A -> 1
+// B -> 2
+// C -> 3
+// ...
+// Z -> 26
+// AA -> 27
+// AB -> 28
+
 pub fn title_to_number(column_title: String) -> i32 {
     let mut result = 0;
     let length = column_title.len();
