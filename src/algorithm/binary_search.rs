@@ -1,5 +1,3 @@
-use crate::utils::loop_guard::LoopGuard;
-
 // Binary Search
 //
 // ## Worst case complexity
@@ -12,14 +10,10 @@ use crate::utils::loop_guard::LoopGuard;
 
 /// Determine if a target value is within a list sorted in ascending order
 pub fn binary_search<T: Ord>(sorted_list: &[T], target: T) -> bool {
-    let mut guard = LoopGuard::new(sorted_list.len() as i32);
-
     let mut l: usize = 0;
     let mut r: usize = sorted_list.len() - 1;
 
     while l <= r {
-        guard.check();
-
         let m = (l + r) / 2; // Conveniently, this will be floored
 
         if target < sorted_list[m] {
