@@ -1,5 +1,5 @@
-# Data Structures and Algorithms in Rust
+# Rust Sandbox
 
 [![Test Status](https://github.com/nbry/ds-algos-rust/actions/workflows/run-tests.yml/badge.svg)](https://github.com/nbry/ds-algos-rust/actions/workflows/run-tests.yml)
 
-Learning Rust by writing implementations of data structures and algorithms, answering leetcode questions.
+Learning popular libraries and playing around with the Rust Programming language

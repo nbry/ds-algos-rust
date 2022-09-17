@@ -58,3 +58,5 @@ fn leetcode_testcase_3() {
 
     assert_eq!(result, expected);
 }
+
+fn main() {}

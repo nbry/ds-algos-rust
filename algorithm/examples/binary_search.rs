@@ -28,6 +28,8 @@ pub fn binary_search<T: Ord>(sorted_list: &[T], target: T) -> bool {
     false
 }
 
+fn main() {}
+
 #[test]
 fn target_is_in_array() {
     // Arrange

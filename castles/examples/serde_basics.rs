@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use serde::{Deserialize, Serialize};
 use serde_json;
 
@@ -31,3 +33,5 @@ fn practice_serde_json() {
     let work_from_json: Vec<WorkOrder> = serde_json::from_str(json_str.as_str()).unwrap();
     println!("Deserialize: {:?}", work_from_json);
 }
+
+fn main() {}

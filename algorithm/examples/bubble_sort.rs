@@ -27,6 +27,8 @@ fn is_out_of_order<T: Ord>(arr_item: &T, next_arr_item: &T, ascending: bool) -> 
     }
 }
 
+fn main() {}
+
 #[test]
 fn descending_bubble_sort() {
     // Arrange

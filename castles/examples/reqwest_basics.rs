@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use reqwest::Method;
 
 use serde::{Deserialize, Serialize};
@@ -46,3 +48,5 @@ pub async fn print_pokemon_attributes() -> Result<(), Box<dyn std::error::Error>
     // println!("{:#?}", pokemon_attributes);
     Ok(())
 }
+
+fn main() {}
